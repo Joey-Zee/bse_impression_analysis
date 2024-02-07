@@ -5,7 +5,11 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Front\App::index');
+
+// We get a performance increase by specifying the default
+// route since we don't have to scan directories.
+$routes->get('/', 'Front\App::nogo');
+$routes->get('/(:alphanum)', 'Front\App::index/$1');
 
 // ADMIN ROUTES
 $routes->group('admin', static function($routes)
