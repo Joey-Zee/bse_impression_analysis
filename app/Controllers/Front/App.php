@@ -35,7 +35,6 @@ class App extends BaseController
             'js/homepage.js'
         ];
 
-        $this->assessment_model = model('App\Models\AssessmentsModel');
         $this->request = \Config\Services::request();
 
     }
@@ -52,6 +51,6 @@ class App extends BaseController
 
         // Views
         $data['page_content'] = 'front/main_app';
-        return view('front/partials/page_template', $data);
+        return view('Front/Partials/page_template', $data);
     }
 }
