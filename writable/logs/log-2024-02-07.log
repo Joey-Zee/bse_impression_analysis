@@ -1,0 +1,124 @@
+ERROR - 2024-02-07 16:09:13 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#7 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#7 {main}
+CRITICAL - 2024-02-07 16:09:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM ')
+ 3 SYSTEMPATH/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 ROOTPATH/spark(102): CodeIgniter\CLI\Console->run()
+ERROR - 2024-02-07 16:09:16 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#7 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#7 {main}
+CRITICAL - 2024-02-07 16:09:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM ')
+ 3 SYSTEMPATH/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 ROOTPATH/spark(102): CodeIgniter\CLI\Console->run()
+ERROR - 2024-02-07 16:09:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#7 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#5 /Users/jzielinski/Documents/devops/bse_impression_analysis/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', Array)
+#6 /Users/jzielinski/Documents/devops/bse_impression_analysis/spark(102): CodeIgniter\CLI\Console->run()
+#7 {main}
+CRITICAL - 2024-02-07 16:09:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM ')
+ 3 SYSTEMPATH/Commands/Database/ShowTableInfo.php(105): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/CLI/Commands.php(65): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 ROOTPATH/spark(102): CodeIgniter\CLI\Console->run()
+CRITICAL - 2024-02-07 16:20:04 --> CodeIgniter\Router\Exceptions\RouterException: The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Front/App::index"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Front/App::index')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('/')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('/')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/jzielinski/Documents/devops/bse_impression_analysis/public/index.php')
+CRITICAL - 2024-02-07 16:34:07 --> ErrorException: Undefined property: App\Controllers\Front\App::$css
+in APPPATH/Controllers/Front/App.php on line 16.
+ 1 APPPATH/Controllers/Front/App.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Front\\App::$css', '/Users/jzielinski/Documents/devops/bse_impression_analysis/app/Controllers/Front/App.php', 16)
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Front\App->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front\App))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/jzielinski/Documents/devops/bse_impression_analysis/public/index.php')
+CRITICAL - 2024-02-07 16:35:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "partials/app_header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('partials/app_header.php')
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('partials/app_header.php', [], true)
+ 3 APPPATH/Views/front/partials/page_template.php(2): view('partials/app_header.php')
+ 4 SYSTEMPATH/View/View.php(228): include('/Users/jzielinski/Documents/devops/bse_impression_analysis/app/Views/front/partials/page_template.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('front/partials/page_template', [], true)
+ 7 APPPATH/Controllers/Front/App.php(55): view('front/partials/page_template', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Front\App->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front\App))
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/jzielinski/Documents/devops/bse_impression_analysis/public/index.php')
