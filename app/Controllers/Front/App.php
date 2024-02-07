@@ -20,7 +20,7 @@ class App extends BaseController
         helper(['html','cookie']);
         $this->css = [
             'lib/bootstrap/css/bootstrap.min.css',
-            'lib/splide/dist/js/splide-core.min.css',
+            'lib/splide/dist/css/splide-core.min.css',
             'css/mainapp.css'
         ];
         

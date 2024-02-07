@@ -15,7 +15,7 @@
    <title><?= $title; ?></title>    
 
    <?php if(isset($styles)): foreach ($styles as $style):?>
-      <link href="<?= base_url().'/assets/'.$style; ?>" rel="stylesheet" type="text/css">
+      <link href="<?= base_url().$style; ?>" rel="stylesheet" type="text/css">
    <?php endforeach; endif;?>
 
 </head>
