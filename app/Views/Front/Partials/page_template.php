@@ -1,5 +1,5 @@
 <?php 
-	echo view('front/partials/app_header.php');
+	echo view('Front/Partials/app_header.php');
 	echo view($page_content);
-	echo view('front/partials/app_footer.php');
+	echo view('Front/Partials/app_footer.php');
 ?>

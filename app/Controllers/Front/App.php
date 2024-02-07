@@ -46,7 +46,7 @@ class App extends BaseController
         $data['noindex'] = TRUE;
 
         // Views
-        $data['page_content'] = 'front/main_app';
+        $data['page_content'] = 'Front/main_app';
         return view('Front/Partials/page_template', $data);
     }
 }
