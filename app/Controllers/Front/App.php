@@ -19,20 +19,16 @@ class App extends BaseController
     {
         helper(['html','cookie']);
         $this->css = [
-            'lib/bootstrap/dist/css/bootstrap.min.css',
-            'lib/line-icons/line-icons.css',
-            'lib/font-awesome/css/fontawesome-all.min.css',
-            'lib/jquery-smart-wizard/dist/css/smart_wizard_all.min.css',
-            'css/homepage-style.css'
+            'lib/bootstrap/css/bootstrap.min.css',
+            'lib/splide/dist/js/splide-core.min.css',
+            'css/mainapp.css'
         ];
         
         $this->js = [
-            'lib/jquery/dist/jquery.min.js',
-            'js/bootstrap.min.js',
-            'lib/sortable/Sortable.min.js',
-            'js/sortable.js',
-            'lib/jquery-smart-wizard/dist/js/jquery.smartWizard.min.js',
-            'js/homepage.js'
+            'lib/jquery.min.js',
+            'lib/bootstrap/js/bootstrap.min.js',
+            'lib/splide/dist/js/splide.min.js',
+            'js/mainapp.js'
         ];
 
         $this->request = \Config\Services::request();
