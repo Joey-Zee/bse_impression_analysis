@@ -30,7 +30,7 @@ class App extends BaseController
             'lib/splide/dist/js/splide.min.js',
             'js/mainapp.js'
         ];
-        
+
         $this->assessment_model = model('App\Models\AssessmentsModel');
         $this->request = \Config\Services::request();
 
@@ -41,8 +41,10 @@ class App extends BaseController
         throw new \Exception('<span class="h5">Assessment not found. Please use the link provided to you.</span>');
     }
 
-    public function index($cid)
+    public function index($cid = NULL)
     {
+        var_dump($cid);
+
         // Assets
         $data['styles'] = $this->css;
         $data['scripts'] = $this->js;
