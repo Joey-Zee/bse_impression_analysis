@@ -1,3 +1,4 @@
+.env
 */config/development
 */logs/log-*.php
 !*/logs/index.html
@@ -19,4 +20,3 @@ writable/session/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-.env
