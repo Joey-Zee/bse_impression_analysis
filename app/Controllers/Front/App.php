@@ -38,7 +38,9 @@ class App extends BaseController
 
     public function nogo()
     {
-        throw new \Exception('<span class="h5">Assessment not found. Please use the link provided to you.</span>');
+        $data['error_message'] ='<span class="h5">Assessment not found. Please use the link provided to you.</span>';
+        return view('errors/html/nogo', $data);
+
     }
 
     public function index($cid = NULL)
@@ -53,6 +55,7 @@ class App extends BaseController
         $data['title'] = 'Welcome';
         $data['noindex'] = TRUE;
 
+        $data['client_info'] = null;
         // Views
         $data['page_content'] = 'Front/main_app';
         return view('Front/Partials/page_template', $data);
