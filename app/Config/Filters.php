@@ -24,6 +24,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'usercheck'     => \App\Filters\UserCheck::class,
         // 'cors'          => Cors::class,
     ];
 

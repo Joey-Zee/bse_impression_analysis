@@ -9,7 +9,18 @@ use CodeIgniter\Router\RouteCollection;
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Front\App::nogo');
-$routes->get('/(:alphanum)', 'Front\App::index/$1');
+
+// FRONT 360 ROUTES
+$routes->group('360', static function($routes)
+{
+    # Page Route
+    $routes->get('(:alphanum)', 'Front\App::index/$1', ['filter' => 'usercheck']);
+
+    # Ajax Routes
+    $routes->get('setPick20', 'Front\AppAjax::pick_twenty');
+    $routes->get('setPick10',  'Front\AppAjax::pick_ten');
+    $routes->get('finalize', 'Front\AppAjax::final');
+});
 
 // ADMIN ROUTES
 $routes->group('admin', static function($routes)
