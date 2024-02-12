@@ -25,28 +25,21 @@ class UserCheck implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        // Check cookie to see if user exists
-        if (isset($_COOKIE['user'])) {
-            return;
+        // call user check method in app model
+        $appModel = new \App\Models\Front\AppModel();
+
+        // get the last segment of the uri and figure out the CID
+        $uri = service('uri');
+        $cid = $uri->getSegment(2);
+
+        // If userCheck() returns true set a cookie, else redirect to nogo
+        if ($appModel->userCheck($cid))
+        {
+            setcookie('user', 'true', time() + (86400 * 30), "/");
         }
         else
         {
-            // call user check method in app model
-            $appModel = new \App\Models\Front\AppModel();
-
-            // get the last segment of the uri and figure out the CID
-            $uri = service('uri');
-            $cid = $uri->getSegment(2);
-
-            // If userCheck() returns true set a cookie, else redirect to nogo
-            if ($appModel->userCheck($cid))
-            {
-                setcookie('user', 'true', time() + (86400 * 30), "/");
-            }
-            else
-            {
-                return redirect()->to('/');
-            }
+            return redirect()->to('/');
         }
     }
 

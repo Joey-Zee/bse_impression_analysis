@@ -9,7 +9,7 @@ class App extends BaseController
 {
     protected $css = array();
     protected $js = array();
-    protected $assessment_model = NULL;
+    protected $appModel = NULL;
     protected $request = NULL;
     
     public $cid;
@@ -21,6 +21,8 @@ class App extends BaseController
         $this->css = [
             'lib/bootstrap/css/bootstrap.min.css',
             'lib/splide/dist/css/splide-core.min.css',
+            'lib/uicons-regular-rounded/css/uicons-regular-rounded.css',
+            'lib/hk-grotesk/hk-grotesk.css',
             'css/mainapp.css'
         ];
         
@@ -31,7 +33,7 @@ class App extends BaseController
             'js/mainapp.js'
         ];
 
-        $this->assessment_model = model('App\Models\AssessmentsModel');
+        $this->appModel = model('App\Models\Front\AppModel');
         $this->request = \Config\Services::request();
 
     }
@@ -45,8 +47,6 @@ class App extends BaseController
 
     public function index($cid = NULL)
     {
-        var_dump($cid);
-
         // Assets
         $data['styles'] = $this->css;
         $data['scripts'] = $this->js;
@@ -56,6 +56,9 @@ class App extends BaseController
         $data['noindex'] = TRUE;
 
         $data['client_info'] = null;
+
+        // Keywords list
+        $data['keywords_list'] = $this->appModel->getKeywordList();
         // Views
         $data['page_content'] = 'Front/main_app';
         return view('Front/Partials/page_template', $data);

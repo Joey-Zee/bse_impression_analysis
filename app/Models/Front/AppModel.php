@@ -41,4 +41,29 @@ class AppModel extends Model
          return FALSE;
       }
    }
+
+   /**
+    * undocumented function summary
+    *
+    * Undocumented function long description
+    *
+    * @param Int $list_id (Optional)
+    * @return type
+    * @throws conditon
+    **/
+   public function getKeywordList(Int $list_id = 12345) : array
+   {
+      $sql = 'SELECT keyword FROM 360_keywords WHERE list_id = ?';
+      $query   = $this->db->query($sql,[$list_id]);
+      $kw_row = $query->getRowArray();
+
+      if ($kw_row != NULL && count($kw_row) != 0)
+      {
+         return $kw_row;
+      }
+      else
+      {
+         return FALSE;
+      }
+   }
 }
