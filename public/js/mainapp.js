@@ -1,3 +1,18 @@
+$(document).ready(function ()
+{
+   // Check local storage for our array
+   if (localStorage.getItem('appContent'))
+   {
+      // The data exists
+      console.log(localStorage.appContent);
+    }
+    else
+    {
+      // The data does not exist, build and init local storage
+      init_localStorage();
+    }
+});
+
 // Wait till all content is loaded into dom
 document.addEventListener( 'DOMContentLoaded', function()
 {
@@ -40,3 +55,20 @@ document.addEventListener( 'DOMContentLoaded', function()
    };
    
 });
+
+function init_localStorage()
+{
+   // Get cid from the url
+   var cid = window.location.pathname.split('/')[2];
+   $.ajax({
+      type: "get",
+      url: "/360/userinit",
+      data: {"cid" : cid},
+      success: function (response)
+      {
+         console.log(response);
+      }
+   });
+   
+   //localStorage.appContent = 
+}

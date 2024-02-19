@@ -55,10 +55,12 @@ class App extends BaseController
         $data['title'] = 'Welcome';
         $data['noindex'] = TRUE;
 
-        $data['client_info'] = null;
-
         // Keywords list
         $data['keywords_list'] = $this->appModel->getKeywordList();
+
+        // User Data
+        $data['udata'] = $this->appModel->getUserData(intval($cid));
+
         // Views
         $data['page_content'] = 'Front/main_app';
         return view('Front/Partials/page_template', $data);

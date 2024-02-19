@@ -6,30 +6,30 @@ use CodeIgniter\Model;
 
 class AppModel extends Model
 {
-    protected bool $allowEmptyInserts = false;
+   protected bool $allowEmptyInserts = false;
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+   // Callbacks
+   protected $allowCallbacks = true;
+   protected $beforeInsert   = [];
+   protected $afterInsert    = [];
+   protected $beforeUpdate   = [];
+   protected $afterUpdate    = [];
+   protected $beforeFind     = [];
+   protected $afterFind      = [];
+   protected $beforeDelete   = [];
+   protected $afterDelete    = [];
 
-    protected $db;
+   protected $db;
 
    public function __construct()
    {
-      $this->db = $db = \Config\Database::connect();   
+      $this->db = $db = \Config\Database::connect();
    }
 
    public function userCheck($uid)
    {
       $sql = 'SELECT id FROM users WHERE uid = ?';
-      $query   = $this->db->query($sql,[$uid]);
+      $query   = $this->db->query($sql, [$uid]);
       $urow = $query->getRowArray();
 
       if ($urow != NULL && count($urow) != 0)
@@ -47,23 +47,51 @@ class AppModel extends Model
     *
     * Undocumented function long description
     *
-    * @param Int $list_id (Optional)
+    * @param Int $cid Description
     * @return type
     * @throws conditon
     **/
-   public function getKeywordList(Int $list_id = 12345) : array
+   public function getUserData(Int $cid = null)
+   {
+      $sql = 'SELECT * FROM users WHERE uid = ?';
+      $query   = $this->db->query($sql, [$cid]);
+      $urow = $query->getRowArray();
+
+      try
+      {
+         return json_encode($urow);
+      }
+      catch (\Throwable $th)
+      {
+         throw $th;
+      }
+   }
+
+   /**
+    * Returns an array of keywords
+    *
+    * Alternatevly, you can not specify a keyword list and it will assign the default list
+    *
+    * @param Int $list_id (Optional)
+    * @return type
+    **/
+   public function getKeywordList(Int $list_id = 12345): array
    {
       $sql = 'SELECT keyword FROM 360_keywords WHERE list_id = ?';
-      $query   = $this->db->query($sql,[$list_id]);
-      $kw_row = $query->getRowArray();
+      $query   = $this->db->query($sql, [$list_id]);
+      $kw_rows = $query->getResultArray();
 
-      if ($kw_row != NULL && count($kw_row) != 0)
+      try
       {
-         return $kw_row;
+         foreach ($kw_rows as $key => $value)
+         {
+            $kw_rows[$key] = $value['keyword'];
+         }
+         return $kw_rows;
       }
-      else
+      catch (\Throwable $th)
       {
-         return FALSE;
+         throw $th;
       }
    }
 }

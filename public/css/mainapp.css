@@ -20,8 +20,21 @@
    width: 0;
  }
 
-.splide__arrows{
+.splide__arrows {
    position: absolute;
    bottom: 10px;
    right: 10px;
+}
+
+.left_content {
+   color: var(--main-text-color);
+   word-wrap: break-word;
+}
+
+.splide__content {
+
+}
+
+.left_content :is(h1, h2, h3, h4, h5, h6) {
+   color: var(--main-text-color);
 }

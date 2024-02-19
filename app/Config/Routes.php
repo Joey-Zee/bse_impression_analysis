@@ -16,7 +16,8 @@ $routes->group('360', static function($routes)
     # Page Route
     $routes->get('(:alphanum)', 'Front\App::index/$1', ['filter' => 'usercheck']);
 
-    # Ajax Routes
+    # API Routes
+    $routes->resource('userinit', ['controller' => 'Api/UserInit']);
     $routes->get('setPick20', 'Front\AppAjax::pick_twenty');
     $routes->get('setPick10',  'Front\AppAjax::pick_ten');
     $routes->get('finalize', 'Front\AppAjax::final');
